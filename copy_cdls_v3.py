@@ -11,7 +11,6 @@ def main():
 	areca = "/Volumes/ARECA_88TB/SONIC3/"
 	usb = "No USB mounted"
 	
-	
 	#Find USB
 	for cdl in cdls:
 		if os.path.ismount(os.path.join("/Volumes/",cdl)):

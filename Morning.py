@@ -4,16 +4,17 @@ import arrow
 import pyperclip as pc
 
 def main():
-	#make new folder structure
+	#Define Variables
 	today = arrow.now().format('YYYYMMDD')
 	sd_num = input("What shootday is it? ")
 
+	#Add number padding
 	while len(sd_num) < 2:
 		sd_num = "0" + sd_num
-	
+		
+	#Create Shootday variables
 	shootday = today + "_MU_SD" + sd_num
 	print(shootday)
-
 	sd_path = os.path.join("/Volumes/ARECA_88TB/SONIC3/", shootday)
 	
 	#if not already a folder name

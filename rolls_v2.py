@@ -46,7 +46,19 @@ def main ():
 	rolls_string = '\n'.join(str(a) for a in rolls_clean)
 	
 	print(*rolls_clean, sep="\n")
-	pc.copy(rolls_string)
+	#pc.copy(rolls_string)
+	bold = "\033[1m"
+	bold_stop = "\033[0m"
+
+	#WORKING AREA!!
+	#Make email body
+
+	email_body = f"Hello,\n\nFootage from {bold}{sd_dir}{bold_stop} will arrive at Company3 on {bold}Shuttle 0 & Shuttle 0{bold_stop}.\n\n{bold}Rolls:{bold_stop}\n{rolls_string}\n\n{bold}Total Time:{bold_stop}00:00:00\n{bold}Total Data:{bold_stop} TB"
+	pc.copy(email_body)
+
+
+
+
 
 if __name__ == "__main__":
 	main()

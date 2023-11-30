@@ -36,17 +36,16 @@ def main ():
 		sd_dir = sd_pot_dirs[0]
 	
 	print("Your shootday: ", sd_dir)
-
 	rolls_path = os.path.join(root,sd_dir,"CAMERA")
-	
+
+	#Pulling roll info from directories
 	for roll in os.listdir(rolls_path):
 		if not "." in roll:
 			rolls_clean.append(roll[:6])
 	rolls_clean = sorted(rolls_clean)
-	
+	rolls_string = '\n'.join(str(a) for a in rolls_clean)
 	
 	print(*rolls_clean, sep="\n")
-	rolls_string = '\n'.join(str(a) for a in rolls_clean)
 	pc.copy(rolls_string)
 
 if __name__ == "__main__":

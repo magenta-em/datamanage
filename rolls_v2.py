@@ -1,19 +1,17 @@
 import os
 import pyperclip as pc
-#import glob
 
 def main ():
 	#Define Variables
 	sd_num = input("Which shootday? ")
-	
+	root = "/Volumes/ARECA_88TB/SONIC3/"
+	sd_pot_dirs = []
+	rolls_clean = []
+
+	#Add number padding for SD's < 10
 	while len(sd_num) < 2:
 		sd_num = "0" + sd_num
 		
-	root = "/Volumes/ARECA_88TB/SONIC3/"
-	
-	sd_pot_dirs = []
-	rolls_clean = []
-	
 	#Find directories with correct sd num
 	for dname in os.listdir(root):
 		path = os.path.join(root, dname)
@@ -21,7 +19,7 @@ def main ():
 			if sd_num in dname[-4:]:
 				sd_pot_dirs.append(dname)
 	
-	#Checking amount of SD folders spit out
+	#User selection of correct shootday from list
 	if len(sd_pot_dirs) > 1:
 		print("Multiple Shootday Options\nPlease select from list:\n")
 		counter = 1
@@ -29,11 +27,11 @@ def main ():
 			print(f"{counter}: {sd}")
 			counter += 1
 		sd_dir = sd_pot_dirs[int(input("Select your shootday:"))-1]
-		
-
+	#If there are no matching shootdays
 	if len(sd_pot_dirs) < 1:
 		print("Shootday folder doesn't exist")
 		exit()
+	#Only one possible shootday
 	if len(sd_pot_dirs) == 1:
 		sd_dir = sd_pot_dirs[0]
 	

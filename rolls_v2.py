@@ -55,9 +55,5 @@ def main ():
 	email_body = f"Hello,\n\nFootage from {bold}{sd_dir}{bold_stop} will arrive at Company3 on {bold}Shuttle 0 & Shuttle 0{bold_stop}.\n\n{bold}Rolls:{bold_stop}\n{rolls_string}\n\n{bold}Total Time:{bold_stop}00:00:00\n{bold}Total Data:{bold_stop} TB"
 	pc.copy(email_body)
 
-
-
-
-
 if __name__ == "__main__":
 	main()

@@ -31,6 +31,12 @@ def findShootday():
 			if len(yday_dirs) < 1:
 				print("No shootdays today or yesterday, unclear process.\nExiting")
 				exit()
+			if len(yday_dirs) == 1:
+				today_sd = yday_dirs[0]
+				
+	print("Your shootday is: " + today_sd)
+	return today_sd
+		
 			
 				
 		

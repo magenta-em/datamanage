@@ -40,7 +40,9 @@ def findShootday(base):
 	print("Your shootday is: " + today_sd)
 	return today_sd
 		
-			
+
+if __name__ == "__main__":
+	main()
 				
 		
 			

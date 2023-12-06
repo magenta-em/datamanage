@@ -1,6 +1,10 @@
 import os
 import arrow
 
+def main():
+	findShootday("/Volumes/ARECA_88TB/SONIC3")
+
+
 def findShootday(base):
 	today = arrow.now().format('YYYYMMDD')
 	today_dirs = []
